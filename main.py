@@ -24,3 +24,8 @@ covid['Date'] = pd.to_datetime(covid['Date']).dt.strftime('%y-%m-%d')
 country_options= covid['Country'].unique().tolist()
 
 st.write(covid)
+
+date_options = covid['Date'].unique().tolist()
+date = st.selectbox('Which date would you like to see?',date_options,100)
+country = st.multiselect('Which country would you like to see?',country_options,['Brazil'])
+
