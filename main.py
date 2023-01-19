@@ -15,3 +15,12 @@ fig = px.scatter(df,x="gdpPercap",y="lifeExp",size="pop", color="continent",hove
 fig.update_layout(width=800)
 
 st.write(fig)
+
+
+covid = pd.read_csv('https://raw.githubusercontent.com/shinokada/covid-19-stats/master/data/daily-new-confirmed-cases-of-covid-19-tests-per-case.csv')
+
+covid.columns = ['Country','Code','Date','Confirmed','Days since confirmed']
+covid['Date'] = pd.to_datetime(covid['Date']).dt.strftime('%y-%m-%d')
+country_options= covid['Country'].unique().tolist()
+
+st.write(covid)
