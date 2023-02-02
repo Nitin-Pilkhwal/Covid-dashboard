@@ -1,2 +1,2 @@
 # Covid-dashboard
-A webapp using streamlit and 
+This project is under construction.
